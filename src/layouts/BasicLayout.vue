@@ -9,7 +9,7 @@
       </a-layout-content>
       <a-layout-footer class="footer">
         <a href="https://yupi.icu" target="_blank">
-          编程题目在线测评系统 by 姚禹娴
+          编程题目在线测评系统 by yaoyx
         </a>
       </a-layout-footer>
     </a-layout>

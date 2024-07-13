@@ -8,6 +8,7 @@ export default {
   state: () => ({
     loginUser: {
       userName: "未登录",
+      role: "nologin",
     },
   }),
   actions: {

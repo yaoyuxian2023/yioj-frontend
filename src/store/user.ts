@@ -1,6 +1,6 @@
 // initial state
 import { StoreOptions } from "vuex";
-// import ACCESS_ENUM from "@/access/accessEnum";
+import ACCESS_ENUM from "@/access/accessEnum";
 // import { UserControllerService } from "../../generated";
 
 export default {
@@ -8,7 +8,7 @@ export default {
   state: () => ({
     loginUser: {
       userName: "未登录",
-      role: "nologin",
+      userRole: ACCESS_ENUM.NOT_LOGIN,
     },
   }),
   actions: {
@@ -23,7 +23,7 @@ export default {
       //     userRole: ACCESS_ENUM.NOT_LOGIN,
       //   });
       // }
-      commit("updateUser", { userName: "鱼皮" });
+      commit("updateUser", payload);
     },
   },
   mutations: {

@@ -11,8 +11,8 @@
           :style="{ padding: 0, marginRight: '38px' }"
           disabled
         >
-          <div class="table-bar">
-            <img class="logo" src="../assets/stack.svg" />
+          <div class="title-bar">
+            <img class="logo" src="../assets/oj-logo.svg" />
             <div class="title">鱼 OJ</div>
           </div>
         </a-menu-item>
@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { routes } from "@/router/routes";
+import { routes } from "../router/routes";
 import { useRoute, useRouter } from "vue-router";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
@@ -59,14 +59,16 @@ const visibleRoutes = computed(() => {
 // 默认主页
 const selectedKeys = ref(["/"]);
 
-// 路由跳转时，更新选中的菜单栏
+// 路由跳转后，更新选中的菜单项
 router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];
 });
 
+console.log();
+
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
-    userName: "yupi管理员",
+    userName: "鱼皮管理员",
     userRole: ACCESS_ENUM.ADMIN,
   });
 }, 3000);
@@ -76,13 +78,10 @@ const doMenuClick = (key: string) => {
     path: key,
   });
 };
-
-console.log();
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.table-bar {
+.title-bar {
   display: flex;
   align-items: center;
 }
